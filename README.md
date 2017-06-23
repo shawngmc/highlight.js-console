@@ -1,28 +1,41 @@
 
-# HLJS2CLI
+# highlight.js-cli
 
 ## Description
-HLJS2CLI is a node module to take the stylized output from 
+highlight.js-cli is a node module to take the stylized output from 
 [highlight.js](https://highlightjs.org) and make it convert the theming
-to work in a node command line
+to work in a node command line.
+
+## Styles copied
+* Bold and italics usually work
+* Colors often work, but may substitute down if [chalk](https://github.com/chalk/chalk) detects a non-true-color terminal
+* Underline sometimes works
+
+
+## Installation
+```console
+$ npm install highlight.js-cli
+```
 
 ## Usage
+Use highlight.js's ```highlightAuto()``` function to create the html output, then use highlight.js-cli's ```convert``` function to convert the text to character codes.
 
+```js
+var text = fs.readFileSync('test.html').toString();
+var hlText = hljs.highlightAuto(text);
+hljs2cli.convert(hlText.value, 'vs')
+  .then(function(converted) {
+    console.log(converted);
+  })
+  .catch(function(ex) {
+    console.error(ex);
+  });
+```
 
-
-
+## Troubleshooting
+* Make sure your terminal/emulator/network tool support this feature
+* Try a different theme - aggressive substitution makes some themes subtle or ineffective
 
 ## TODO
-* Create highlight.js style reader - npm css2json looks useful
-* Test bold/italics/underline (other languages/elements?)
 * Test with tabs?
-* Split into test and actual module code
-* See if swapping to mainline npm chalk and color packages could work (I doubt it, but...)
 * Improve bgcolor coverage (full width)
-
-## Tested OK/Fixed
-* OK: Newlines are preserved
-* OK: Spaces are preserved
-* FIX: Base color now properly applied
-* OK: Bold/Italics/Underline implemented
-* OK: Background color is implemented
