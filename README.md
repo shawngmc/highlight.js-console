@@ -39,3 +39,6 @@ hljs2cli.convert(hlText.value, 'vs')
 ## TODO
 * Test with tabs?
 * Improve bgcolor coverage (full width)
+
+## License
+Apache 2.0
