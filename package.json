@@ -1,20 +1,19 @@
 {
-  "name": "hljs2cli",
+  "name": "hightlight.js-cli",
   "version": "1.0.0",
   "description": "Convert highlight.js colorized code to node.js-style terminal text.",
   "main": "index.js",
   "scripts": {
     "test": "cd test && node test.js"
   },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "highlight.js": "^9.12.0"
-  },
+  "author": "Shawn McNaughton",
+  "repository": "shawngmc/highlight.js-cli",
+  "license": "Apache-2.0",
   "dependencies": {
     "bluebird": "^3.5.0",
     "chalk": "git+https://github.com/chalk/chalk.git",
     "css2json": "0.0.4",
+    "highlight.js": "^9.12.0",
     "html2json": "^1.0.2"
   }
 }
