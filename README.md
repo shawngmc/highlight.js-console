@@ -6,10 +6,11 @@ highlight.js-cli is a node module to take the stylized output from
 [highlight.js](https://highlightjs.org) and make it convert the theming
 to work in a node command line.
 
-## Styles copied
-* Bold and italics usually work
-* Colors often work, but may substitute down if [chalk](https://github.com/chalk/chalk) detects a non-true-color terminal
-* Underline sometimes works
+## Features
+* Preserves Whitespace
+* Will attempt to use bold/italics/underline
+* Will apply foreground and background colors
+  * Colors often work, but may substitute down if [chalk](https://github.com/chalk/chalk) detects a non-true-color terminal
 
 
 ## Installation
