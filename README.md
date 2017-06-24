@@ -1,8 +1,8 @@
 
-# highlight.js-cli
+# highlight.js-console
 
 ## Description
-highlight.js-cli is a node module to take the stylized output from 
+highlight.js-console is a node module to take the stylized output from 
 [highlight.js](https://highlightjs.org) and make it convert the theming
 to work in a node command line.
 
@@ -15,16 +15,18 @@ to work in a node command line.
 
 ## Installation
 ```console
-$ npm install highlight.js-cli
+$ npm install highlight.js-console
 ```
 
 ## Usage
-Use highlight.js's ```highlightAuto()``` function to create the html output, then use highlight.js-cli's ```convert``` function to convert the text to character codes.
+Use highlight.js's ```highlightAuto()``` function to create the html output, then use highlight.js-console's ```convert``` function to convert the text to character codes.
 
 ```js
+var hljs = require('highlight.js');
+var h2c = require('highlight.js-console'); 
 var text = fs.readFileSync('test.html').toString();
 var hlText = hljs.highlightAuto(text);
-hljs2cli.convert(hlText.value, 'vs')
+h2c.convert(hlText.value, 'vs')
   .then(function(converted) {
     console.log(converted);
   })
